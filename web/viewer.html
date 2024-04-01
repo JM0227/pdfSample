@@ -27,13 +27,19 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta name="google" content="notranslate">
     <title>PDF.js viewer</title>
 
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="locale/locale.json">
-<script src="../build/pdf.mjs" type="module"></script>
-
-    <link rel="stylesheet" href="viewer.css">
-
+  <!-- This snippet is used in production (included from viewer.html) -->
+  <link rel="resource" type="application/l10n" href="locale/locale.json">
+  <script src="../build/pdf.mjs" type="module"></script>
+  <link rel="stylesheet" href="viewer.css">
   <script src="viewer.mjs" type="module"></script>
+  <style>
+    /* custom bar css(추후 css 파일 별도로 분리해 사용) */
+    .custombarContainer{
+      position:absolute;
+      z-index:100;
+      right:0;
+    }
+  </style>
   </head>
 
   <body tabindex="1">
@@ -354,6 +360,17 @@ See https://github.com/adobe-type-tools/cmap-resources
           <div id="viewer" class="pdfViewer"></div>
         </div>
       </div> <!-- mainContainer -->
+
+      <!-- custom bar : 이정민 추가 -->
+      <div class="custombarContainer">
+        <ul class="customList">
+          <li class="customItem"><a href="#">메뉴1</a></li>
+          <li class="customItem"><a href="#">메뉴2</a></li>
+          <li class="customItem"><a href="#">메뉴3</a></li>
+          <li class="customItem"><button type="button" class="customBtn">버튼</button></li>
+        </ul>
+      </div>
+      <!-- //custom bar : 이정민 추가 -->
 
       <div id="dialogContainer">
         <dialog id="passwordDialog">
