@@ -46,7 +46,10 @@ See https://github.com/adobe-type-tools/cmap-resources
     }
     .custombarContainer .customList{
       list-style:none;
+      height:calc(100vh - 64px);
       padding:10px 20px;
+      box-sizing:border-box;
+      overflow:auto;
     }
     .custombarContainer .customList li + li{
       margin-top:10px;
@@ -57,8 +60,18 @@ See https://github.com/adobe-type-tools/cmap-resources
       color:#222;
       text-decoration:none;
     }
+    .custombarContainer .customList a:hover,
+    .custombarContainer .customList a:focus{
+      text-decoration:underline;
+    }
     .custombarContainer .customBtn{
       display:inline-block;
+      padding:3px 10px;
+      font-size:14px;
+      border:solid 1px #a7a7a7;
+      background:#fff;
+      border-radius:4px;
+      cursor:pointer;
     }
     
   </style>
@@ -396,7 +409,7 @@ See https://github.com/adobe-type-tools/cmap-resources
           </div>
         </div>
         <!-- //top -->
-        
+
         <ul class="customList">
           <li class="customItem"><a href="#">메뉴1</a></li>
           <li class="customItem"><a href="#">메뉴2</a></li>
