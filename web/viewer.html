@@ -34,11 +34,20 @@ See https://github.com/adobe-type-tools/cmap-resources
   <script src="viewer.mjs" type="module"></script>
   <style>
     /* custom bar css(추후 css 파일 별도로 분리해 사용) */
+    #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode){
+      inset-inline-end:200px;
+    }
     .custombarContainer{
       position:absolute;
       z-index:100;
       right:0;
+      top:32px;
+      width:200px;
     }
+    .custombarContainer .customList{
+      list-style:none;
+    }
+    
   </style>
   </head>
 
@@ -363,6 +372,34 @@ See https://github.com/adobe-type-tools/cmap-resources
 
       <!-- custom bar : 이정민 추가 -->
       <div class="custombarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="pdfjs-thumbs-button" role="radio" aria-checked="true" aria-controls="thumbnailView">
+                 <span data-l10n-id="pdfjs-thumbs-button-label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="pdfjs-document-outline-button" role="radio" aria-checked="false" aria-controls="outlineView">
+                 <span data-l10n-id="pdfjs-document-outline-button-label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="pdfjs-attachments-button" role="radio" aria-checked="false" aria-controls="attachmentsView">
+                 <span data-l10n-id="pdfjs-attachments-button-label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="pdfjs-layers-button" role="radio" aria-checked="false" aria-controls="layersView">
+                 <span data-l10n-id="pdfjs-layers-button-label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="pdfjs-current-outline-item-button">
+                <span data-l10n-id="pdfjs-current-outline-item-button-label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul class="customList">
           <li class="customItem"><a href="#">메뉴1</a></li>
           <li class="customItem"><a href="#">메뉴2</a></li>
