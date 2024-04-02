@@ -45,9 +45,6 @@ See https://github.com/adobe-type-tools/cmap-resources
       width:200px;
       visibility:hidden;
     }
-    #outerContainer:is(.sidebarMoving, .sidebarOpen) #custombarContainer{
-        visibility:visible;
-    }
     .custombarContainer .customList{
       list-style:none;
       height:calc(100vh - 64px);
@@ -76,6 +73,10 @@ See https://github.com/adobe-type-tools/cmap-resources
       background:#fff;
       border-radius:4px;
       cursor:pointer;
+    }
+    #outerContainer:is(.sidebarMoving, .sidebarOpen) #custombarContainer, 
+    #outerContainer:is(.sidebarMoving, .sidebarOpen) #custombarContainer{
+        visibility:visible;
     }
     
   </style>
@@ -401,7 +402,7 @@ See https://github.com/adobe-type-tools/cmap-resources
       </div> <!-- mainContainer -->
 
       <!-- custom bar : 이정민 추가 -->
-      <div class="custombarContainer">
+      <div id="custombarContainer">
         <!-- top -->
         <div id="toolbarSidebar">
           <div id="toolbarSidebarLeft">
