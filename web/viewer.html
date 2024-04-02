@@ -37,7 +37,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode){
       inset-inline-end:200px;
     }
-    .custombarContainer{
+    #custombarContainer{
       position:absolute;
       z-index:100;
       right:0;
@@ -45,27 +45,27 @@ See https://github.com/adobe-type-tools/cmap-resources
       width:200px;
       visibility:hidden;
     }
-    .custombarContainer .customList{
+    #custombarContainer #customList{
       list-style:none;
       height:calc(100vh - 64px);
       padding:10px 20px;
       box-sizing:border-box;
       overflow:auto;
     }
-    .custombarContainer .customList li + li{
+    #custombarContainer #customList li + li{
       margin-top:10px;
     }
-    .custombarContainer .customList a{
+    #custombarContainer #customList a{
       display:inline-block;
       font-size:14px;
       color:#222;
       text-decoration:none;
     }
-    .custombarContainer .customList a:hover,
-    .custombarContainer .customList a:focus{
+    #custombarContainer #customList a:hover,
+    #custombarContainer #customList a:focus{
       text-decoration:underline;
     }
-    .custombarContainer .customBtn{
+    #custombarContainer .customBtn{
       display:inline-block;
       padding:3px 10px;
       font-size:14px;
@@ -74,7 +74,6 @@ See https://github.com/adobe-type-tools/cmap-resources
       border-radius:4px;
       cursor:pointer;
     }
-    #outerContainer:is(.sidebarMoving, .sidebarOpen) #custombarContainer, 
     #outerContainer:is(.sidebarMoving, .sidebarOpen) #custombarContainer{
         visibility:visible;
     }
